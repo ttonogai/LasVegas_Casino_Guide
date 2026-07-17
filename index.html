@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラスベガス カジノガイド</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;}
+  :root{
+    --bg:#0C120F;
+    --surface:#141C17;
+    --surface2:#1B2620;
+    --felt:#1E5C41;
+    --felt-deep:#153F2E;
+    --gold:#D3A94E;
+    --gold-bright:#E9C87A;
+    --ink:#EDE6D5;
+    --muted:#A3B0A5;
+    --red:#D65A50;
+    --line:rgba(211,169,78,.22);
+    --line-soft:rgba(237,230,213,.10);
+    --radius:14px;
+    --display:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
+    --body:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;
+  }
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.85;
+    margin:0;
+    font-size:15.5px;
+  }
+  /* ---------- header ---------- */
+  .masthead{
+    text-align:center;
+    padding:44px 20px 28px;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(30,92,65,.55), transparent 65%),
+      var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .masthead .suits{
+    color:var(--gold);
+    letter-spacing:.6em;
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  .masthead .suits .r{color:var(--red);}
+  .masthead h1{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(26px,7vw,40px);
+    letter-spacing:.14em;
+    margin:0 0 4px;
+    color:var(--gold-bright);
+    text-wrap:balance;
+  }
+  .masthead .sub{
+    color:var(--ink);
+    font-size:15px;
+    letter-spacing:.08em;
+    margin:6px 0 0;
+  }
+  .masthead .note{
+    color:var(--muted);
+    font-size:12.5px;
+    margin-top:10px;
+  }
+  /* ---------- nav ---------- */
+  nav.tabs{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(12,18,15,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  nav.tabs::-webkit-scrollbar{display:none;}
+  nav.tabs .row{
+    display:flex;
+    gap:8px;
+    padding:10px 14px;
+    width:max-content;
+  }
+  .tab-btn{
+    appearance:none;
+    border:1px solid var(--line);
+    background:var(--surface);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:13.5px;
+    padding:8px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+    cursor:pointer;
+  }
+  .tab-btn[aria-selected="true"]{
+    background:var(--felt);
+    border-color:var(--gold);
+    color:#fff;
+    font-weight:600;
+  }
+  .tab-btn:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;}
+  /* ---------- layout ---------- */
+  main{max-width:760px;margin:0 auto;padding:22px 16px 80px;}
+  section.game{display:none;}
+  section.game.active{display:block;}
+  h2{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(22px,6vw,30px);
+    letter-spacing:.06em;
+    color:var(--gold-bright);
+    margin:14px 0 2px;
+    text-wrap:balance;
+  }
+  .jp-name{color:var(--muted);font-size:14px;letter-spacing:.14em;margin:0 0 14px;}
+  h3{
+    font-size:16px;
+    color:var(--gold);
+    letter-spacing:.06em;
+    margin:30px 0 10px;
+    padding-left:12px;
+    border-left:3px solid var(--gold);
+    line-height:1.5;
+  }
+  p{margin:10px 0;}
+  .lede{font-size:15.5px;}
+  /* ---------- stat badges ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin:16px 0 6px;
+  }
+  .stat{
+    background:var(--surface);
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius);
+    padding:10px 8px;
+    text-align:center;
+  }
+  .stat .k{font-size:11px;color:var(--muted);letter-spacing:.1em;display:block;}
+  .stat .v{
+    font-size:15px;
+    font-weight:700;
+    color:var(--gold-bright);
+    font-variant-numeric:tabular-nums;
+    line-height:1.5;
+    display:block;
+    margin-top:2px;
+  }
+  .stat .v small{font-weight:400;color:var(--muted);font-size:11px;}
+  /* ---------- steps ---------- */
+  ol.steps{
+    list-style:none;
+    counter-reset:step;
+    margin:14px 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  ol.steps>li{
+    counter-increment:step;
+    background:var(--surface);
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius);
+    padding:12px 14px 12px 52px;
+    position:relative;
+  }
+  ol.steps>li::before{
+    content:counter(step);
+    position:absolute;
+    left:14px;top:14px;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:var(--felt);
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    font-family:var(--display);
+    font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  ol.steps b{color:var(--gold-bright);}
+  /* ---------- tables ---------- */
+  .tablewrap{overflow-x:auto;margin:12px 0;border-radius:var(--radius);border:1px solid var(--line-soft);}
+  table{
+    border-collapse:collapse;
+    width:100%;
+    min-width:420px;
+    font-size:13.5px;
+    background:var(--surface);
+  }
+  th,td{
+    padding:9px 12px;
+    text-align:left;
+    border-bottom:1px solid var(--line-soft);
+    white-space:nowrap;
+  }
+  td.wrap,th.wrap{white-space:normal;min-width:12em;}
+  thead th{
+    background:var(--felt-deep);
+    color:var(--gold-bright);
+    font-weight:600;
+    letter-spacing:.05em;
+    font-size:12.5px;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  td.pay{color:var(--gold-bright);font-weight:700;font-variant-numeric:tabular-nums;}
+  .good{color:#8FD6A8;font-weight:600;}
+  .bad{color:var(--red);font-weight:600;}
+  /* ---------- callouts ---------- */
+  .tip,.warn{
+    border-radius:var(--radius);
+    padding:12px 14px;
+    margin:12px 0;
+    font-size:14px;
+  }
+  .tip{background:rgba(30,92,65,.28);border:1px solid rgba(143,214,168,.35);}
+  .warn{background:rgba(214,90,80,.12);border:1px solid rgba(214,90,80,.4);}
+  .tip .label,.warn .label{
+    display:block;
+    font-size:11.5px;
+    letter-spacing:.14em;
+    margin-bottom:4px;
+    font-weight:700;
+  }
+  .tip .label{color:#8FD6A8;}
+  .warn .label{color:var(--red);}
+  ul.clean{margin:10px 0;padding-left:1.3em;}
+  ul.clean li{margin:6px 0;}
+  /* ---------- term list ---------- */
+  dl.terms{margin:12px 0;}
+  dl.terms dt{
+    color:var(--gold-bright);
+    font-weight:700;
+    margin-top:12px;
+  }
+  dl.terms dd{margin:2px 0 0;color:var(--ink);}
+  dl.terms dd .en{color:var(--muted);font-size:12.5px;}
+  /* ---------- compare cards on basics ---------- */
+  .compare .tag{
+    display:inline-block;
+    background:var(--felt-deep);
+    border:1px solid var(--line);
+    color:var(--gold-bright);
+    border-radius:6px;
+    padding:1px 8px;
+    font-size:12px;
+    margin-right:6px;
+  }
+  .divider{
+    text-align:center;
+    color:var(--gold);
+    letter-spacing:.5em;
+    margin:34px 0 6px;
+    font-size:12px;
+  }
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    padding:30px 20px 40px;
+    border-top:1px solid var(--line-soft);
+    line-height:2;
+  }
+  .nextlink{
+    display:block;
+    text-align:center;
+    margin-top:34px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    color:var(--gold-bright);
+    padding:13px;
+    cursor:pointer;
+    font-size:14px;
+    width:100%;
+    font-family:var(--body);
+  }
+  @media (max-width:480px){
+    .stats{grid-template-columns:repeat(3,1fr);}
+    body{font-size:15px;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    section.game.active{animation:fade .25s ease;}
+    @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="suits"><span class="r">♥</span> ♠ <span class="r">♦</span> ♣</div>
+  <h1>LAS VEGAS CASINO GUIDE</h1>
+  <p class="sub">はじめてのカジノ 完全ガイド</p>
+  <p class="note">テーブルゲームからスロットまで、遊び方・配当・マナーをこの1ページで</p>
+</header>
+
+<nav class="tabs" aria-label="ゲーム選択">
+  <div class="row" role="tablist">
+    <button class="tab-btn" role="tab" data-target="basics" aria-selected="true">基礎知識</button>
+    <button class="tab-btn" role="tab" data-target="blackjack" aria-selected="false">ブラックジャック</button>
+    <button class="tab-btn" role="tab" data-target="roulette" aria-selected="false">ルーレット</button>
+    <button class="tab-btn" role="tab" data-target="baccarat" aria-selected="false">バカラ</button>
+    <button class="tab-btn" role="tab" data-target="poker" aria-selected="false">ポーカー</button>
+    <button class="tab-btn" role="tab" data-target="craps" aria-selected="false">クラップス</button>
+    <button class="tab-btn" role="tab" data-target="slots" aria-selected="false">スロット</button>
+    <button class="tab-btn" role="tab" data-target="videopoker" aria-selected="false">ビデオポーカー</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= BASICS ================= -->
+<section class="game active" id="basics">
+  <h2>THE BASICS</h2>
+  <p class="jp-name">カジノの基礎知識</p>
+  <p class="lede">ラスベガスのカジノは初心者に寛容です。ルールを知らなくてもディーラーに「First time（初めてです）」と伝えれば丁寧に教えてくれます。まずは共通ルールとマナーを押さえましょう。</p>
+
+  <h3>入場とチップの買い方</h3>
+  <ol class="steps">
+    <li><b>21歳以上</b>のみ入場・プレイ可能。若く見える場合はID確認されるので<b>パスポート</b>を携帯しましょう（コピー不可）。</li>
+    <li>テーブルゲームでは、席に着いたら<b>現金をテーブルの上に置きます</b>。手渡しは禁止です。ディーラーがチップ（キャッシュチップ）に交換してくれます。</li>
+    <li>ゲームをやめる時は「Color up, please（カラーアップ）」と言うと、細かいチップを高額チップにまとめてくれます。<b>換金はケージ（Cashier）</b>で行います。</li>
+    <li>スロットやビデオポーカーは、紙幣を直接マシンに挿入。やめる時は「CASH OUT」ボタンで<b>TITOチケット</b>（バーコード付きレシート）が出るので、キオスクかケージで換金します。</li>
+  </ol>
+
+  <h3>ミニマムベット（最低賭け金）</h3>
+  <p>各テーブルには最低賭け金を示すプレートがあります。ストリップの大型ホテルでは平日<b>$10〜25</b>が目安ですが、<b>VMware ExploreやAWS re:Inventなどの大型カンファレンス期間中は$25〜50に上がる</b>ことが多いです。安く遊びたい場合は、朝〜昼の時間帯や、ダウンタウン（フリーモント地区）のカジノが狙い目です。</p>
+
+  <h3>どのゲームを選ぶ？ 一覧比較</h3>
+  <div class="tablewrap compare">
+    <table>
+      <thead><tr><th>ゲーム</th><th>難易度</th><th class="num">控除率*</th><th class="wrap">ひとこと</th></tr></thead>
+      <tbody>
+        <tr><td>ブラックジャック</td><td>★★☆</td><td class="num good">約0.5%</td><td class="wrap">基本戦略を使えば最も有利。一番人気</td></tr>
+        <tr><td>バカラ</td><td>★☆☆</td><td class="num good">約1.1%</td><td class="wrap">判断不要で運任せ。実は超シンプル</td></tr>
+        <tr><td>クラップス</td><td>★★☆</td><td class="num good">約1.4%</td><td class="wrap">最も盛り上がる。基本ベットだけなら簡単</td></tr>
+        <tr><td>ビデオポーカー</td><td>★★☆</td><td class="num good">約0.5〜3%</td><td class="wrap">マイペースに遊べてスロットより有利</td></tr>
+        <tr><td>ルーレット</td><td>★☆☆</td><td class="num">5.26%</td><td class="wrap">見た目が華やかで分かりやすい定番</td></tr>
+        <tr><td>ポーカー</td><td>★★★</td><td class="num">対人戦</td><td class="wrap">相手はカジノでなく他のプレイヤー</td></tr>
+        <tr><td>スロット</td><td>★☆☆</td><td class="num">6〜12%</td><td class="wrap">最も気軽。一攫千金の夢もある</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="color:var(--muted);font-size:12.5px;">* 控除率（ハウスエッジ）＝カジノ側の取り分の期待値。低いほどプレイヤーに有利。標準的なベガスルール・最適プレイ時の代表値です。</p>
+
+  <h3>テーブルでのマナー</h3>
+  <ul class="clean">
+    <li><b>スマホはテーブル上で使わない</b>（写真撮影も原則NG。使う時は席を外す）。</li>
+    <li>飲み物はプレイ中<b>無料</b>。カクテルウェイトレスに注文し、受け取る時に<b>$1〜2のチップ</b>を渡します。</li>
+    <li>ディーラーへのチップ（心付け）は義務ではありませんが、勝った時や席を立つ時に$5程度渡すとスマートです。「ディーラー用に賭ける」（自分のベットの前に置く）のも粋な渡し方です。</li>
+    <li>配られたカードの扱いはゲームごとにルールがあります。<b>表向きに配られたカードには触らない</b>のが原則です。</li>
+    <li>ベット後、ゲームが始まったらチップに触らない。</li>
+  </ul>
+
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    ホテルの<b>プレイヤーズカード</b>（Caesars Rewards、MGM Rewardsなど）を無料で作ってからプレイすると、食事やホテル代の割引につながります。テーブルでは着席時にカードを出すだけでOKです。
+  </div>
+
+  <div class="warn">
+    <span class="label">ご注意</span>
+    予算は「負けてもよい額」を先に決めて、それ以上は追わないのが鉄則です。また<b>$1,200以上のジャックポット</b>が当たると税務処理（W-2G）のため係員が来ます。パスポートがあると手続きがスムーズです。
+  </div>
+
+  <button class="nextlink" data-target="blackjack">次へ：ブラックジャックの遊び方 →</button>
+</section>
+
+<!-- ================= BLACKJACK ================= -->
+<section class="game" id="blackjack">
+  <h2>BLACKJACK</h2>
+  <p class="jp-name">ブラックジャック ─ 21</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★★☆</span></div>
+    <div class="stat"><span class="k">控除率</span><span class="v">0.5%<small>（基本戦略時）</small></span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★★</span></div>
+  </div>
+  <p class="lede">ディーラーと1対1で「21に近い方が勝ち」を競うカジノの王様。基本戦略どおりに打てば、カジノで最も負けにくいゲームです。</p>
+
+  <h3>ゲームの目的</h3>
+  <p>手札の合計を<b>21以下でディーラーより高く</b>すること。22以上になったら「バスト」で即負けです。カードの数え方：<b>2〜10は数字どおり、絵札（J/Q/K）は10、Aは1または11</b>（有利な方で自動的に数えます）。</p>
+  <p>最初の2枚が「A＋10点カード」なら<b>ブラックジャック</b>で、配当は<b>1.5倍（3 to 2）</b>です。</p>
+
+  <h3>遊び方の流れ</h3>
+  <ol class="steps">
+    <li>枠内にチップを置いて<b>ベット</b>。全員に2枚ずつ表向きで配られ、ディーラーは1枚表・1枚裏。</li>
+    <li>自分の番が来たら選択します。<b>ヒット（Hit）</b>＝もう1枚引く、<b>スタンド（Stand）</b>＝これで勝負。</li>
+    <li>強い場面では<b>ダブルダウン（Double）</b>＝賭け金を倍にして1枚だけ引く、同じ数字のペアなら<b>スプリット（Split）</b>＝2つの手に分けて勝負、も選べます。</li>
+    <li>全員が終わるとディーラーが裏カードを開き、<b>17以上になるまで機械的に引きます</b>。ディーラーに選択の自由はありません。</li>
+    <li>ディーラーより21に近ければ勝ち（配当2倍＝1 to 1）。ディーラーがバストしても勝ちです。同点は引き分け（プッシュ）で返金。</li>
+  </ol>
+
+  <h3>ハンドシグナル（重要）</h3>
+  <p>防犯カメラ記録のため、意思表示は声ではなく<b>ジェスチャー</b>で行います。</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>アクション</th><th class="wrap">ジェスチャー（カード表向きのテーブル）</th></tr></thead>
+      <tbody>
+        <tr><td>ヒット</td><td class="wrap">テーブルを指先で軽く<b>トントンと叩く</b></td></tr>
+        <tr><td>スタンド</td><td class="wrap">手のひらを下にして<b>横に振る</b></td></tr>
+        <tr><td>ダブルダウン</td><td class="wrap">同額のチップを元のベットの<b>横に</b>置き、指1本立てる</td></tr>
+        <tr><td>スプリット</td><td class="wrap">同額のチップを横に置き、指2本で<b>Vサイン</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warn"><span class="label">ご注意</span>表向きに配られた自分のカードには<b>触ってはいけません</b>。</div>
+
+  <h3>基本戦略（これだけ覚えれば十分）</h3>
+  <p>数学的に最適な打ち方は決まっています。迷ったら次の表に従えばOKです。</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>自分の手</th><th class="wrap">最適な打ち方</th></tr></thead>
+      <tbody>
+        <tr><td>8 以下</td><td class="wrap">必ずヒット</td></tr>
+        <tr><td>9</td><td class="wrap">ディーラーが3〜6ならダブル、他はヒット</td></tr>
+        <tr><td>10</td><td class="wrap">ディーラーが2〜9ならダブル、10/Aはヒット</td></tr>
+        <tr><td>11</td><td class="wrap"><b>常にダブル</b></td></tr>
+        <tr><td>12</td><td class="wrap">ディーラーが4〜6ならスタンド、他はヒット</td></tr>
+        <tr><td>13〜16</td><td class="wrap">ディーラーが2〜6ならスタンド、7〜Aならヒット</td></tr>
+        <tr><td>17 以上</td><td class="wrap">必ずスタンド</td></tr>
+        <tr><td>A を含むソフト18</td><td class="wrap">ディーラーが9/10/Aならヒット、他はスタンド（3〜6ならダブル）</td></tr>
+        <tr><td>A・A / 8・8 のペア</td><td class="wrap"><b>必ずスプリット</b></td></tr>
+        <tr><td>10・10 / 5・5 のペア</td><td class="wrap">スプリットしない（10・10はスタンド、5・5は「10」として扱う）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    ディーラーの見せ札が<b>2〜6は「弱い」</b>（バストしやすい）、<b>7〜Aは「強い」</b>と覚えると表の意味が分かります。基本戦略カードはギフトショップで売っており、<b>テーブルで見ながら打っても怒られません</b>。
+  </div>
+
+  <h3>避けるべきもの</h3>
+  <ul class="clean">
+    <li><b>「Blackjack pays 6 to 5」のテーブルは避ける</b>。ブラックジャックの配当が1.2倍しかなく、控除率が約1.4%も悪化します。必ず<b>3 to 2</b>のテーブルを選びましょう。</li>
+    <li><b>インシュランス（保険）は常に断る</b>。ディーラーのAに対する保険ですが、期待値はマイナスです。「No, thank you」でOK。</li>
+  </ul>
+
+  <button class="nextlink" data-target="roulette">次へ：ルーレットの遊び方 →</button>
+</section>
+
+<!-- ================= ROULETTE ================= -->
+<section class="game" id="roulette">
+  <h2>ROULETTE</h2>
+  <p class="jp-name">ルーレット ─ カジノの女王</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★☆☆</span></div>
+    <div class="stat"><span class="k">控除率</span><span class="v">5.26%<small>（アメリカン）</small></span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★★</span></div>
+  </div>
+  <p class="lede">回転する円盤のどこに玉が落ちるかを当てるだけ。ルールが一目で分かり、チップを好きなだけ散らして楽しめる、カジノで最も華やかな定番ゲームです。</p>
+
+  <h3>まず知っておくこと</h3>
+  <p>ラスベガスの主流は<b>「0」と「00」がある38ポケットのアメリカンルーレット</b>（控除率5.26%）。「0」のみの<b>ヨーロピアン（シングルゼロ）</b>は控除率2.70%と有利ですが、ハイリミットエリアに置かれていることが多いです。見つけたらそちらがおすすめです。</p>
+
+  <h3>遊び方の流れ</h3>
+  <ol class="steps">
+    <li>着席して現金を置くと、<b>自分専用の色のチップ</b>（カラーチップ）に交換されます。誰のベットか色で区別する仕組みです。</li>
+    <li>レイアウト（数字の書かれた台）の好きな場所にチップを置きます。<b>複数箇所に賭けてOK</b>。ディーラーが「Place your bets」と言っている間はいつでも置けます。</li>
+    <li>玉が回り、ディーラーが手を振って<b>「No more bets」</b>と言ったらベット終了。以降はチップに触れません。</li>
+    <li>当たり番号にマーカー（ドリー）が置かれ、外れチップが回収された後、配当が支払われます。<b>マーカーが外されるまで次のベットはしない</b>こと。</li>
+    <li>席を立つ時はカラーチップを通常チップに戻してもらいます（カラーチップはそのテーブル専用です）。</li>
+  </ol>
+
+  <h3>ベットの種類と配当</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>ベット</th><th class="wrap">内容</th><th class="num">配当</th></tr></thead>
+      <tbody>
+        <tr><td>ストレートアップ</td><td class="wrap">数字1点賭け</td><td class="num pay">35倍</td></tr>
+        <tr><td>スプリット</td><td class="wrap">隣り合う2数字（線上に置く）</td><td class="num pay">17倍</td></tr>
+        <tr><td>ストリート</td><td class="wrap">横1列の3数字</td><td class="num pay">11倍</td></tr>
+        <tr><td>コーナー</td><td class="wrap">4数字の交点</td><td class="num pay">8倍</td></tr>
+        <tr><td>ダブルストリート</td><td class="wrap">横2列の6数字</td><td class="num pay">5倍</td></tr>
+        <tr><td>ダズン / コラム</td><td class="wrap">12数字（1st12など / 縦列）</td><td class="num pay">2倍</td></tr>
+        <tr><td>赤黒 / 奇偶 / ハイロー</td><td class="wrap">ほぼ半分に賭ける</td><td class="num pay">1倍</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted);font-size:13px;">※配当は「賭け金に上乗せで支払われる倍率」です（35倍＝$5賭けて$175獲得＋元金返還）。0/00が出ると赤黒などの外側ベットはすべて負けです。</p>
+
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    初心者は<b>赤黒などの1倍配当で長く遊び、数枚だけ好きな数字に置いて夢を見る</b>のがバランス良い楽しみ方。誕生日や記念日の数字に賭けるのがベガス流です。どこに置けばいいか分からなければ、番号を言ってディーラーに置いてもらうこともできます。
+  </div>
+  <div class="warn">
+    <span class="label">ご注意</span>
+    「ファイブナンバーベット」（0・00・1・2・3の5点賭け）だけは控除率7.89%と特に不利なので避けましょう。また必勝法として有名な「マーチンゲール（倍賭け）」は、テーブル上限と資金ですぐ破綻します。
+  </div>
+
+  <button class="nextlink" data-target="baccarat">次へ：バカラの遊び方 →</button>
+</section>
+
+<!-- ================= BACCARAT ================= -->
+<section class="game" id="baccarat">
+  <h2>BACCARAT</h2>
+  <p class="jp-name">バカラ ─ 王侯貴族のゲーム</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★☆☆</span></div>
+    <div class="stat"><span class="k">控除率</span><span class="v">1.06%<small>（バンカー）</small></span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★★</span></div>
+  </div>
+  <p class="lede">高級なイメージがありますが、実は<b>プレイヤーが判断することが一切ない</b>最も簡単なテーブルゲーム。「プレイヤー」と「バンカー」どちらが勝つかに賭けるだけです。控除率も低く、初心者に最適です。</p>
+
+  <h3>ゲームの目的</h3>
+  <p>「プレイヤー（Player）」「バンカー（Banker）」という2つの仮想の手に2〜3枚ずつカードが配られ、<b>合計の下一桁が9に近い方が勝ち</b>。あなたはどちらが勝つか（または引き分け＝タイ）を予想して賭けるだけです。</p>
+  <p>数え方：<b>A＝1、2〜9＝数字どおり、10と絵札＝0</b>。合計の下一桁だけを見ます（7＋8＝15 → 「5」）。</p>
+
+  <h3>遊び方の流れ</h3>
+  <ol class="steps">
+    <li><b>PLAYER / BANKER / TIE</b> のいずれかの枠にチップを置きます。判断はこれだけ。</li>
+    <li>ディーラーがプレイヤー側・バンカー側に2枚ずつ配ります。どちらかが最初の2枚で8か9なら<b>「ナチュラル」</b>で即決着。</li>
+    <li>3枚目を引くかどうかは<b>ルールで完全に自動決定</b>され、ディーラーが処理します（プレイヤー側は合計0〜5で3枚目を引く、など。覚える必要はありません）。</li>
+    <li>9に近い方が勝ち。的中すると配当が支払われます。</li>
+  </ol>
+
+  <h3>配当と控除率</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>賭け先</th><th class="num">配当</th><th class="num">控除率</th><th class="wrap">評価</th></tr></thead>
+      <tbody>
+        <tr><td>バンカー</td><td class="num pay">0.95倍<small>（5%手数料）</small></td><td class="num">1.06%</td><td class="wrap good">最も有利。迷ったらこれ</td></tr>
+        <tr><td>プレイヤー</td><td class="num pay">1倍</td><td class="num">1.24%</td><td class="wrap good">十分有利</td></tr>
+        <tr><td>タイ（引き分け）</td><td class="num pay">8倍</td><td class="num">14.36%</td><td class="wrap bad">非常に不利。避けるべき</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>バンカーがわずかに勝ちやすいため、バンカーの勝ち配当からは5%の手数料（コミッション）が引かれます。それを含めても<b>バンカー賭けが最有利</b>です。タイの場合、プレイヤー/バンカーへのベットは返金されます。</p>
+
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    ベガスでは少額から遊べる<b>ミニバカラ</b>のテーブルが一般的で、進行も速く気軽です。罫線（過去の勝敗表）でパターンを読むのがアジア圏で人気の楽しみ方ですが、数学的には毎回独立。<b>「基本はバンカー、気分でプレイヤー、タイは買わない」</b>だけ覚えれば完璧です。
+  </div>
+
+  <button class="nextlink" data-target="poker">次へ：ポーカーの遊び方 →</button>
+</section>
+
+<!-- ================= POKER ================= -->
+<section class="game" id="poker">
+  <h2>POKER</h2>
+  <p class="jp-name">ポーカー ─ テキサスホールデム</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★★★</span></div>
+    <div class="stat"><span class="k">相手</span><span class="v">他の客<small>（対人戦）</small></span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★☆☆</span></div>
+  </div>
+  <p class="lede">ポーカールームで行うポーカーは、カジノではなく<b>他のプレイヤーとの真剣勝負</b>（カジノは場代を取るだけ）。世界標準は<b>テキサスホールデム</b>です。経験者向けですが、役と流れを知れば観戦も楽しめます。</p>
+
+  <h3>役の強さ（ハンドランキング）</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th class="num">強さ</th><th>役</th><th class="wrap">内容</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>ロイヤルフラッシュ</td><td class="wrap">同スートの A-K-Q-J-10</td></tr>
+        <tr><td class="num">2</td><td>ストレートフラッシュ</td><td class="wrap">同スートで数字が連続する5枚</td></tr>
+        <tr><td class="num">3</td><td>フォーカード</td><td class="wrap">同じ数字4枚</td></tr>
+        <tr><td class="num">4</td><td>フルハウス</td><td class="wrap">スリーカード＋ワンペア</td></tr>
+        <tr><td class="num">5</td><td>フラッシュ</td><td class="wrap">同スート5枚</td></tr>
+        <tr><td class="num">6</td><td>ストレート</td><td class="wrap">数字が連続する5枚</td></tr>
+        <tr><td class="num">7</td><td>スリーカード</td><td class="wrap">同じ数字3枚</td></tr>
+        <tr><td class="num">8</td><td>ツーペア</td><td class="wrap">ペアが2組</td></tr>
+        <tr><td class="num">9</td><td>ワンペア</td><td class="wrap">ペアが1組</td></tr>
+        <tr><td class="num">10</td><td>ハイカード</td><td class="wrap">役なし。一番強い1枚で勝負</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>テキサスホールデムの流れ</h3>
+  <ol class="steps">
+    <li>各プレイヤーに裏向きで2枚（<b>ホールカード</b>）。ディーラー左隣の2人が強制ベット（<b>ブラインド</b>）を出します。</li>
+    <li><b>プリフロップ</b>：手札2枚を見て、降りる（フォールド）／同額を出す（コール）／上乗せ（レイズ）を選択。</li>
+    <li>場に共有カードが<b>3枚（フロップ）→1枚（ターン）→1枚（リバー）</b>と開かれ、そのたびにベットラウンド。誰も賭けていなければ<b>チェック</b>（パス）もできます。</li>
+    <li>最後まで残った人で<b>ショーダウン</b>。手札2枚＋共有5枚の計7枚から<b>最強の5枚</b>を作り、勝者がポット（場の全チップ）を総取りします。</li>
+  </ol>
+
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    初心者は<b>$1/$2や$1/$3のノーリミットの最低レート</b>から。参加する手札を強いものに絞る（A+絵札、ペアなど）だけで大負けしにくくなります。ポーカールームの入口で「First time, one-two no-limit please」と言えば席に案内してくれます。
+  </div>
+  <div class="warn">
+    <span class="label">対人戦が不安なら</span>
+    ディーラーと1対1で戦うテーブルゲーム版ポーカー「<b>アルティメット・テキサスホールデム</b>」や「<b>スリーカードポーカー</b>」がおすすめ。他人との駆け引きがなく、ブラックジャック感覚でポーカーの役を楽しめます。ベガスのどのカジノにもあります。
+  </div>
+
+  <h3>ポーカールームのマナー</h3>
+  <ul class="clean">
+    <li>自分の番が来るまでアクションしない。カードは両手で持ち上げず、<b>手元で端を少し曲げて確認</b>。</li>
+    <li>レイズする時は金額を先に宣言する。チップを何度かに分けて出す「ストリングベット」は反則です。</li>
+    <li>ポットを取ったら$1〜2をディーラーへチップとして渡すのが慣習です。</li>
+  </ul>
+
+  <button class="nextlink" data-target="craps">次へ：クラップスの遊び方 →</button>
+</section>
+
+<!-- ================= CRAPS ================= -->
+<section class="game" id="craps">
+  <h2>CRAPS</h2>
+  <p class="jp-name">クラップス ─ ベガスで一番熱い場所</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★★☆</span></div>
+    <div class="stat"><span class="k">控除率</span><span class="v">1.41%<small>（パスライン）</small></span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★☆</span></div>
+  </div>
+  <p class="lede">2個のサイコロで遊ぶアメリカ生まれのゲーム。テーブル全体が一体となって盛り上がる、カジノで最も歓声が上がる場所です。ベット表は複雑に見えますが、<b>「パスライン」1種類だけ覚えれば参加できます</b>。</p>
+
+  <h3>基本：パスラインベット</h3>
+  <p>サイコロを振る人（<b>シューター</b>）は客が交代で務めます。みんなでシューターを応援する構図です。</p>
+  <ol class="steps">
+    <li>テーブル手前の<b>「PASS LINE」</b>にチップを置きます。</li>
+    <li>シューターが最初の一投（<b>カムアウトロール</b>）。<b>7か11なら即勝ち</b>（1倍配当）、<b>2・3・12なら即負け</b>。</li>
+    <li>それ以外（4・5・6・8・9・10）が出たら、その数字が<b>ポイント</b>になります（ディーラーが白いマーカー「ON」を数字に置きます）。</li>
+    <li>以降シューターは投げ続け、<b>7より先にポイントの数字をもう一度出せば勝ち</b>、先に7が出たら負け（セブンアウト）です。</li>
+  </ol>
+
+  <h3>覚えたら次はこれ：オッズベット</h3>
+  <p>ポイントが決まった後、パスラインのチップの<b>後ろ</b>に追加で置けるのが「オッズベット」。なんと<b>控除率0%</b>（カジノの取り分なし）という、カジノ全体で唯一の完全フェアなベットです。「3-4-5×オッズ」などと上限が表示されています。</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>ポイント</th><th class="num">オッズベットの配当</th></tr></thead>
+      <tbody>
+        <tr><td>4 または 10</td><td class="num pay">2倍</td></tr>
+        <tr><td>5 または 9</td><td class="num pay">1.5倍</td></tr>
+        <tr><td>6 または 8</td><td class="num pay">1.2倍（6:5）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>「パスライン＋オッズ」の組み合わせは合計控除率が1%を切り、カジノで最も有利な遊び方のひとつです。</p>
+
+  <h3>サイコロを振る時のルール</h3>
+  <ul class="clean">
+    <li>スティックマンから差し出されたサイコロは<b>片手で</b>扱う（両手や持ち替えはNG）。</li>
+    <li><b>テーブルの奥の壁（バックウォール）に当たるように</b>投げる。届かないと投げ直しです。</li>
+    <li>振りたくなければ「Pass, please」でパスしてOK。ベットだけの参加もできます。</li>
+    <li>迷信ですが、テーブルでは<b>「セブン」と口に出すのはタブー</b>。周りの流儀に合わせましょう。</li>
+    <li>サイコロが飛んでいる間は手をテーブルの上に出さない（当たると縁起が悪いとされ、本気で嫌がられます）。</li>
+  </ul>
+
+  <div class="warn">
+    <span class="label">ご注意</span>
+    テーブル中央の派手なベット（Any 7、フィールド、ハードウェイなど）は配当が大きい分、控除率5〜17%と非常に不利。<b>「パスライン＋オッズ」以外は雰囲気で少額だけ</b>にしておくのが賢明です。
+  </div>
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    まずは他人のゲームを数分眺めてリズムを掴むのがおすすめ。ディーラーが4人もいる賑やかなテーブルなので、「First time」と言えば皆が世話を焼いてくれます。シューターが勝ち続けている「ホットなテーブル」の歓声はベガス名物です。
+  </div>
+
+  <button class="nextlink" data-target="slots">次へ：スロットの遊び方 →</button>
+</section>
+
+<!-- ================= SLOTS ================= -->
+<section class="game" id="slots">
+  <h2>SLOTS</h2>
+  <p class="jp-name">スロットマシン</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★☆☆</span></div>
+    <div class="stat"><span class="k">還元率</span><span class="v">88〜94%</span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★☆</span></div>
+  </div>
+  <p class="lede">ボタンを押すだけ、会話も不要。カジノフロアの7割を占めるベガスの顔です。技術介入の余地はなく完全に運のゲームなので、<b>「娯楽費」と割り切って楽しむ</b>のがコツです。</p>
+
+  <h3>遊び方</h3>
+  <ol class="steps">
+    <li>好きな台に座り、<b>紙幣を挿入口に入れます</b>（$20札などそのままでOK）。画面にクレジットが表示されます。</li>
+    <li><b>ベット額を設定</b>：「ライン数 × 1ラインあたりのベット」で1回転の金額が決まります。画面の「BET」ボタンで調整できます。</li>
+    <li><b>SPIN</b>ボタンを押す（レバーのある台はレバーでも同じ）。指定ライン上に絵柄が揃えば配当です。</li>
+    <li>ボーナスゲームやフリースピンは画面の指示に従うだけ。迷ったら放っておいても自動で進みます。</li>
+    <li>やめる時は<b>「CASH OUT」</b>を押してTITOチケットを受け取り、キオスクで換金します。</li>
+  </ol>
+
+  <h3>台選びの知識</h3>
+  <ul class="clean">
+    <li>ペニースロット（1ライン1¢）でも全ライン賭けると1回転50¢〜$1以上になることが多いです。<b>1回転あたりの金額</b>を確認しましょう。</li>
+    <li>一般に<b>高額デノミ（$1台、$5台）ほど還元率が高く</b>、ペニースロットは低め（88%前後）です。</li>
+    <li><b>プログレッシブ機</b>（Megabucksなど）は積立ジャックポットが魅力ですが、その分通常時の還元率は低め。夢を買う台です。</li>
+    <li>「出やすい台」「時間帯」の攻略法は存在しません。毎回転が独立した抽選です。</li>
+  </ul>
+
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    プレイ前に<b>プレイヤーズカードを台に挿す</b>のを忘れずに。プレイ額に応じてポイントや食事クーポンが貯まります。また、スロットエリアでも飲み物は無料です。
+  </div>
+  <div class="warn">
+    <span class="label">ご注意</span>
+    1回の当たりが<b>$1,200以上</b>になると台がロックされ、係員が来て税務書類（W-2G）を作成します（ハンドペイ）。故障ではないので安心を。非居住者は原則30%源泉徴収されますが、<b>日米租税条約により日本居住者は還付・免除の対象</b>になり得ます。書類は捨てずに持ち帰りましょう。
+  </div>
+
+  <button class="nextlink" data-target="videopoker">次へ：ビデオポーカーの遊び方 →</button>
+</section>
+
+<!-- ================= VIDEO POKER ================= -->
+<section class="game" id="videopoker">
+  <h2>VIDEO POKER</h2>
+  <p class="jp-name">ビデオポーカー ─ 通好みの一台</p>
+  <div class="stats">
+    <div class="stat"><span class="k">難易度</span><span class="v">★★☆</span></div>
+    <div class="stat"><span class="k">還元率</span><span class="v">99.5%<small>（9/6 JoB）</small></span></div>
+    <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★★</span></div>
+  </div>
+  <p class="lede">マシンで遊ぶ5枚交換ポーカー（相手はいません）。スロットの気軽さで、<b>正しく遊べば還元率99%超</b>という高い期待値を両立した、地元民に最も愛されるゲームです。バーカウンターに埋め込まれた台も多く、飲みながら遊べます。</p>
+
+  <h3>遊び方（Jacks or Better＝定番機種）</h3>
+  <ol class="steps">
+    <li>紙幣を入れ、<b>「MAX BET」（5枚賭け）</b>でディール。カードが5枚配られます。</li>
+    <li>残したいカードを画面タッチか「HOLD」ボタンで選択（<b>HELD</b>表示が付きます）。</li>
+    <li><b>「DRAW」</b>を押すと、選ばなかったカードが交換されます。</li>
+    <li>完成した役に応じて配当。<b>ジャック以上のワンペア</b>から配当が付きます（＝Jacks or Betterの名前の由来）。</li>
+  </ol>
+
+  <h3>配当表（9/6 Jacks or Better・1コインあたり）</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>役</th><th class="num">配当</th><th class="wrap">メモ</th></tr></thead>
+      <tbody>
+        <tr><td>ロイヤルフラッシュ</td><td class="num pay">250<small>（5枚賭けなら800）</small></td><td class="wrap good">MAX BETでボーナス倍率</td></tr>
+        <tr><td>ストレートフラッシュ</td><td class="num pay">50</td><td class="wrap"></td></tr>
+        <tr><td>フォーカード</td><td class="num pay">25</td><td class="wrap"></td></tr>
+        <tr><td>フルハウス</td><td class="num pay">9</td><td class="wrap good">ここが「9」の台を選ぶ</td></tr>
+        <tr><td>フラッシュ</td><td class="num pay">6</td><td class="wrap good">ここが「6」の台を選ぶ</td></tr>
+        <tr><td>ストレート</td><td class="num pay">4</td><td class="wrap"></td></tr>
+        <tr><td>スリーカード</td><td class="num pay">3</td><td class="wrap"></td></tr>
+        <tr><td>ツーペア</td><td class="num pay">2</td><td class="wrap"></td></tr>
+        <tr><td>ジャック以上のペア</td><td class="num pay">1</td><td class="wrap"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2つの鉄則</h3>
+  <ul class="clean">
+    <li><b>台を選ぶ</b>：フルハウス9／フラッシュ6の「9/6台」（フルペイ）は還元率99.54%。同じ機種でも「8/5台」は97.3%に下がります。配当表を見て選びましょう。</li>
+    <li><b>常にMAX BET（5枚賭け）</b>：ロイヤルフラッシュの配当が250→800倍に跳ね上がるのは5枚賭けの時だけ。賭け金を抑えたい時は、枚数を減らすのではなく<b>デノミ（25¢→5¢など）を下げます</b>。</li>
+  </ul>
+
+  <h3>簡易ホールド戦略</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th class="wrap">配られた手</th><th class="wrap">残すもの</th></tr></thead>
+      <tbody>
+        <tr><td class="wrap">役が完成している</td><td class="wrap">基本そのまま勝負（ロイヤル4枚がある時だけ崩してOK）</td></tr>
+        <tr><td class="wrap">ジャック以上のペア</td><td class="wrap">ペアの2枚だけ残して3枚交換</td></tr>
+        <tr><td class="wrap">10以下のペア</td><td class="wrap">それでもペアを残す（絵札1枚より価値が高い）</td></tr>
+        <tr><td class="wrap">フラッシュ・ストレートまであと1枚</td><td class="wrap">その4枚を残す</td></tr>
+        <tr><td class="wrap">何もない</td><td class="wrap">ジャック以上のカードだけ残す。それもなければ全交換</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <span class="label">SMART PLAY</span>
+    バーカウンターのビデオポーカーは、遊んでいる間ドリンクが無料になる定番スポット。待ち合わせ前のひとときや、ショーの開演までの時間つぶしに最適です。
+  </div>
+
+  <div class="divider">♠ ♥ ♦ ♣</div>
+  <button class="nextlink" data-target="basics">← 基礎知識にもどる</button>
+</section>
+
+</main>
+
+<footer>
+  Good luck &amp; have fun in Vegas!<br>
+  ※本ガイドはラスベガスの標準的なルール・数値に基づく参考情報です。ルール・配当・ミニマムベットはカジノや時期により異なります。<br>
+  お酒とギャンブルは節度を持って。21歳未満はプレイできません。
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('section.game');
+  function show(id, push){
+    sections.forEach(s => s.classList.toggle('active', s.id === id));
+    tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.target === id)));
+    const btn = document.querySelector('.tab-btn[data-target="'+id+'"]');
+    if(btn) btn.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+    if(push){ try{ history.replaceState(null,'','#'+id); }catch(e){} }
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.target, true)));
+  document.querySelectorAll('.nextlink').forEach(b =>
+    b.addEventListener('click', () => show(b.dataset.target, true)));
+  const initial = location.hash.replace('#','');
+  if(initial && document.getElementById(initial)) show(initial, false);
+</script>
+</body>
+</html>
