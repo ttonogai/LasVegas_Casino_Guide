@@ -68,6 +68,32 @@
     font-size:12.5px;
     margin-top:10px;
   }
+  .masthead .goadv{
+    display:inline-block;
+    margin-top:16px;
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    border-radius:999px;
+    padding:6px 16px;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-decoration:none;
+  }
+  .masthead .goadv:hover{background:rgba(211,169,78,.12);}
+  /* ---------- advanced promo card ---------- */
+  .advcard{
+    display:block;
+    text-decoration:none;
+    background:linear-gradient(135deg, rgba(30,92,65,.4), var(--surface));
+    border:1px solid var(--gold);
+    border-radius:var(--radius);
+    padding:18px 18px;
+    margin:34px 0 6px;
+  }
+  .advcard .ey{font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;}
+  .advcard .ti{font-family:var(--display);font-size:20px;color:var(--gold-bright);margin:4px 0 4px;letter-spacing:.04em;}
+  .advcard .de{font-size:13.5px;color:var(--ink);margin:0;}
+  .advcard .ar{color:var(--gold-bright);font-size:13px;margin-top:8px;display:inline-block;}
   /* ---------- nav ---------- */
   nav.tabs{
     position:sticky;
@@ -302,6 +328,7 @@
   <h1>LAS VEGAS CASINO GUIDE</h1>
   <p class="sub">はじめてのカジノ 完全ガイド</p>
   <p class="note">テーブルゲームからスロットまで、遊び方・配当・マナーをこの1ページで</p>
+  <a class="goadv" href="strategy.html">▶ 実践攻略ガイド（上級者向け）へ</a>
 </header>
 
 <nav class="tabs" aria-label="ゲーム選択">
@@ -756,6 +783,13 @@
     <span class="label">SMART PLAY</span>
     バーカウンターのビデオポーカーは、遊んでいる間ドリンクが無料になる定番スポット。待ち合わせ前のひとときや、ショーの開演までの時間つぶしに最適です。
   </div>
+
+  <a class="advcard" href="strategy.html">
+    <span class="ey">Next Step</span>
+    <div class="ti">実践攻略ガイド</div>
+    <p class="de">遊び方に慣れたら次のステップへ。完全基本戦略マトリクス、カードカウンティング、ビデオポーカー完全戦略、期待値と資金管理まで、精度を極めた上級者向けの立ち回りを解説します。</p>
+    <span class="ar">上級者向けガイドを見る →</span>
+  </a>
 
   <div class="divider">♠ ♥ ♦ ♣</div>
   <button class="nextlink" data-target="basics">← 基礎知識にもどる</button>
