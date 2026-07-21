@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラスベガス カジノ用語集</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;}
+  :root{
+    --bg:#0C120F;
+    --surface:#141C17;
+    --surface2:#1B2620;
+    --felt:#1E5C41;
+    --felt-deep:#153F2E;
+    --gold:#D3A94E;
+    --gold-bright:#E9C87A;
+    --ink:#EDE6D5;
+    --muted:#A3B0A5;
+    --red:#D65A50;
+    --line:rgba(211,169,78,.22);
+    --line-soft:rgba(237,230,213,.10);
+    --radius:14px;
+    --display:Georgia,"Times New Roman","Hiragino Mincho ProN","Yu Mincho",serif;
+    --body:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;
+  }
+  html{-webkit-text-size-adjust:100%;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.8;margin:0;font-size:15.5px;}
+  .ribbon{background:var(--felt-deep);border-bottom:1px solid var(--line);text-align:center;font-size:12.5px;padding:7px 14px;}
+  .ribbon a{color:var(--gold-bright);text-decoration:none;letter-spacing:.04em;}
+  .ribbon a:hover{text-decoration:underline;}
+  .ribbon .sep{color:var(--muted);margin:0 8px;}
+  /* header */
+  .masthead{text-align:center;padding:38px 20px 22px;background:radial-gradient(120% 90% at 50% 0%, rgba(30,92,65,.55), transparent 65%),var(--bg);border-bottom:1px solid var(--line);}
+  .masthead .suits{color:var(--gold);letter-spacing:.6em;font-size:14px;margin-bottom:10px;}
+  .masthead .suits .r{color:var(--red);}
+  .masthead h1{font-family:var(--display);font-weight:400;font-size:clamp(24px,6.6vw,38px);letter-spacing:.12em;margin:0 0 4px;color:var(--gold-bright);text-wrap:balance;}
+  .masthead .sub{color:var(--ink);font-size:15px;letter-spacing:.08em;margin:6px 0 0;}
+  /* sticky search */
+  .searchbar{position:sticky;top:0;z-index:50;background:rgba(12,18,15,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px max(14px, calc((100% - 760px) / 2 + 16px));}
+  .searchbar .box{position:relative;max-width:760px;margin:0 auto;}
+  .searchbar input{
+    width:100%;appearance:none;
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;
+    color:var(--ink);font-family:var(--body);font-size:15px;
+    padding:11px 40px 11px 16px;
+  }
+  .searchbar input::placeholder{color:var(--muted);}
+  .searchbar input:focus{outline:none;border-color:var(--gold);}
+  .searchbar .ico{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:15px;pointer-events:none;}
+  /* layout */
+  main{max-width:760px;margin:0 auto;padding:18px 16px 80px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 18px;}
+  .chips a{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 13px;font-size:12.5px;text-decoration:none;white-space:nowrap;}
+  .chips a:hover{border-color:var(--gold);color:var(--gold-bright);}
+  .cat{margin:22px 0;scroll-margin-top:78px;}
+  .cat > h2{
+    font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.06em;
+    color:var(--gold-bright);margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);
+  }
+  .cat > h2 .en{font-family:var(--body);font-size:12px;color:var(--muted);letter-spacing:.14em;margin-left:8px;}
+  .term{background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;padding:12px 14px;margin:8px 0;}
+  .term .t{font-weight:700;color:var(--gold-bright);font-size:15px;}
+  .term .t .en{display:inline-block;color:var(--muted);font-weight:400;font-size:12.5px;letter-spacing:.04em;margin-left:8px;}
+  .term .d{font-size:14px;margin-top:4px;color:var(--ink);}
+  .term .d b{color:var(--gold-bright);}
+  mark{background:rgba(211,169,78,.32);color:var(--gold-bright);border-radius:3px;padding:0 1px;}
+  .count{color:var(--muted);font-size:12.5px;margin:0 0 6px;}
+  .noresult{display:none;text-align:center;color:var(--muted);padding:40px 10px;font-size:14px;}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:28px 20px 44px;border-top:1px solid var(--line-soft);line-height:2;}
+  footer a{color:var(--gold-bright);text-decoration:none;}
+  .backlinks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+  .backlinks a{flex:1;min-width:200px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);color:var(--gold-bright);padding:13px;text-decoration:none;font-size:14px;}
+  .backlinks a:hover{background:rgba(211,169,78,.1);}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <a href="index.html">初心者ガイド</a><span class="sep">|</span><a href="strategy.html">実践攻略ガイド</a>
+</div>
+
+<header class="masthead">
+  <div class="suits"><span class="r">♥</span> ♠ <span class="r">♦</span> ♣</div>
+  <h1>CASINO GLOSSARY</h1>
+  <p class="sub">カジノ用語集 ─ 迷ったらここで調べる</p>
+</header>
+
+<div class="searchbar">
+  <div class="box">
+    <input type="search" id="q" placeholder="用語を検索（例：オッズ、控除率、フロップ…）" aria-label="用語を検索" autocomplete="off">
+    <span class="ico">🔍</span>
+  </div>
+</div>
+
+<main>
+  <nav class="chips" aria-label="カテゴリへ移動">
+    <a href="#c-common">共通・お金</a>
+    <a href="#c-table">テーブル共通</a>
+    <a href="#c-bj">ブラックジャック</a>
+    <a href="#c-roulette">ルーレット</a>
+    <a href="#c-baccarat">バカラ</a>
+    <a href="#c-craps">クラップス</a>
+    <a href="#c-poker">ポーカー</a>
+    <a href="#c-vp">ビデオポーカー</a>
+    <a href="#c-comp">コンプ・資金管理</a>
+  </nav>
+
+  <p class="count" id="count"></p>
+  <div class="noresult" id="noresult">該当する用語が見つかりませんでした。別の言葉でお試しください。</div>
+
+  <section class="cat" id="c-common">
+    <h2>共通・お金<span class="en">BASICS &amp; MONEY</span></h2>
+    <div class="term"><div class="t">ハウスエッジ<span class="en">控除率 / House Edge</span></div><div class="d">カジノが長期的に取る賭け金の割合。低いほどプレイヤー有利で、ゲーム選びの最重要指標。</div></div>
+    <div class="term"><div class="t">期待値<span class="en">EV / Expected Value</span></div><div class="d">1回の賭けで平均的に得（損）する金額。マイナスなら長期的に負ける賭け。</div></div>
+    <div class="term"><div class="t">還元率<span class="en">ペイアウト率 / RTP</span></div><div class="d">賭けた総額のうち平均的にプレイヤーへ戻る割合。100%−還元率＝ハウスエッジ。</div></div>
+    <div class="term"><div class="t">分散<span class="en">バリアンス / Variance</span></div><div class="d">結果のブレの大きさ。期待値がマイナスでも短期で勝てるのは分散のおかげ。</div></div>
+    <div class="term"><div class="t">チップ<span class="en">Chips / Cheques</span></div><div class="d">カジノ内の通貨。現金と交換して使う。テーブル専用の色付きチップもある。</div></div>
+    <div class="term"><div class="t">カラーアップ<span class="en">Color Up</span></div><div class="d">細かいチップを高額チップにまとめること。退卓時に「Color up, please」と伝える。</div></div>
+    <div class="term"><div class="t">ケージ<span class="en">Cashier / Cage</span></div><div class="d">チップを現金に換金する窓口。</div></div>
+    <div class="term"><div class="t">TITO<span class="en">Ticket In Ticket Out</span></div><div class="d">スロット等で使うバーコード付きのチケット。現金の代わりに出入金し、キオスクで換金する。</div></div>
+    <div class="term"><div class="t">ミニマムベット<span class="en">Table Minimum</span></div><div class="d">そのテーブルの最低賭け金。卓上のプレートに表示される。</div></div>
+    <div class="term"><div class="t">プログレッシブ<span class="en">Progressive</span></div><div class="d">プレイ額の一部を積み立てて膨らむジャックポット方式。</div></div>
+    <div class="term"><div class="t">ハンドペイ<span class="en">Hand Pay</span></div><div class="d">$1,200以上など高額配当時に、機械でなく係員が手渡しで支払う手続き。税務書類を伴う。</div></div>
+    <div class="term"><div class="t">W-2G</div><div class="d">米国の高額ギャンブル配当の申告書類。日本居住者は日米租税条約で還付・免除を申請できる場合がある。</div></div>
+  </section>
+
+  <section class="cat" id="c-table">
+    <h2>テーブル共通<span class="en">TABLE TERMS</span></h2>
+    <div class="term"><div class="t">ディーラー<span class="en">Dealer</span></div><div class="d">ゲームを進行するカジノ側の担当者。テーブルゲームの相手役も務める。</div></div>
+    <div class="term"><div class="t">ピットボス<span class="en">Pit Boss</span></div><div class="d">複数テーブルを監督する責任者。トラブル対応やコンプ判断を行う。</div></div>
+    <div class="term"><div class="t">ベット<span class="en">Bet / Wager</span></div><div class="d">賭けること、または賭け金そのもの。</div></div>
+    <div class="term"><div class="t">プッシュ<span class="en">Push</span></div><div class="d">引き分け。賭け金は返却される。</div></div>
+    <div class="term"><div class="t">シュー<span class="en">Shoe</span></div><div class="d">複数デッキのカードを入れて配る箱。</div></div>
+    <div class="term"><div class="t">プロップベット<span class="en">Proposition Bet</span></div><div class="d">配当は大きいが控除率が高い「一発狙い」の賭け。多くは不利。</div></div>
+  </section>
+
+  <section class="cat" id="c-bj">
+    <h2>ブラックジャック<span class="en">BLACKJACK</span></h2>
+    <div class="term"><div class="t">ヒット<span class="en">Hit</span></div><div class="d">カードをもう1枚引くこと。テーブルを軽く叩いて意思表示する。</div></div>
+    <div class="term"><div class="t">スタンド<span class="en">Stand</span></div><div class="d">これ以上引かず勝負すること。手を横に振って示す。</div></div>
+    <div class="term"><div class="t">ダブルダウン<span class="en">Double Down</span></div><div class="d">賭け金を倍にして、カードを1枚だけ引く強気の選択。</div></div>
+    <div class="term"><div class="t">スプリット<span class="en">Split</span></div><div class="d">同じ数字のペアを2つの手に分けて別々に勝負すること。</div></div>
+    <div class="term"><div class="t">サレンダー<span class="en">Surrender</span></div><div class="d">勝ち目が薄い時、賭け金の半分を放棄して降りること。</div></div>
+    <div class="term"><div class="t">バスト<span class="en">Bust</span></div><div class="d">合計が22以上になり即負けとなること。</div></div>
+    <div class="term"><div class="t">ナチュラル / ブラックジャック<span class="en">Natural / Blackjack</span></div><div class="d">最初の2枚がA＋10点札で合計21。配当1.5倍（3:2）。</div></div>
+    <div class="term"><div class="t">インシュランス<span class="en">保険 / Insurance</span></div><div class="d">ディーラーのAに対する保険。期待値はマイナスで、基本は断るのが正解。</div></div>
+    <div class="term"><div class="t">ソフトハンド / ハードハンド<span class="en">Soft / Hard Hand</span></div><div class="d">Aを11として数える手がソフト、そうでない手がハード。</div></div>
+    <div class="term"><div class="t">アップカード / ホールカード<span class="en">Up card / Hole card</span></div><div class="d">ディーラーの表向きの札がアップカード、裏向きの札がホールカード。</div></div>
+    <div class="term"><div class="t">3:2 / 6:5</div><div class="d">ブラックジャック成立時の配当。3:2（1.5倍）が正常で、6:5（1.2倍）の卓は不利なので避ける。</div></div>
+    <div class="term"><div class="t">S17 / H17</div><div class="d">ディーラーがソフト17でスタンドするのがS17（有利）、ヒットするのがH17（やや不利）。</div></div>
+    <div class="term"><div class="t">DAS<span class="en">Double After Split</span></div><div class="d">スプリット後にダブルダウンできるルール。プレイヤーに有利。</div></div>
+    <div class="term"><div class="t">基本戦略<span class="en">Basic Strategy</span></div><div class="d">自分の手とディーラーのアップカードから決まる、数学的に最適な打ち方。</div></div>
+    <div class="term"><div class="t">カードカウンティング<span class="en">Card Counting</span></div><div class="d">場に出た札を記憶し、残りデッキの有利不利を推定する技術。合法だがカジノは拒否できる。</div></div>
+    <div class="term"><div class="t">Hi-Lo</div><div class="d">最も普及したカウント法。低い札に+1、高い札に−1を割り当てて合算する。</div></div>
+    <div class="term"><div class="t">ランニングカウント / トゥルーカウント<span class="en">Running / True Count</span></div><div class="d">札の合算値がランニングカウント、それを残りデッキ数で割った実効値がトゥルーカウント。</div></div>
+    <div class="term"><div class="t">ベットスプレッド<span class="en">Bet Spread</span></div><div class="d">有利な時に大きく、不利な時に小さく賭ける、賭け金の振れ幅。カウンティングの収益源。</div></div>
+    <div class="term"><div class="t">偏差プレイ / インデックス<span class="en">Deviation / Index</span></div><div class="d">カウントに応じて基本戦略から外れる打ち方と、その分岐点となる数値。</div></div>
+    <div class="term"><div class="t">Illustrious 18 / Fab 4</div><div class="d">影響の大きい偏差プレイの代表集。18の主要プレイと、4つの偏差サレンダー。</div></div>
+    <div class="term"><div class="t">ペネトレーション<span class="en">Penetration</span></div><div class="d">シャッフルまでに使われるカードの割合。深いほどカウンターに有利。</div></div>
+    <div class="term"><div class="t">バックオフ<span class="en">Back-off</span></div><div class="d">カジノがカウンター等にプレイ中止や退店を丁寧に促すこと。</div></div>
+  </section>
+
+  <section class="cat" id="c-roulette">
+    <h2>ルーレット<span class="en">ROULETTE</span></h2>
+    <div class="term"><div class="t">アメリカン / ヨーロピアン / フレンチ<span class="en">American / European / French</span></div><div class="d">0と00の38個がアメリカン（控除率5.26%）、0のみ37個がヨーロピアン（2.70%）。フレンチは返還ルール付きでさらに有利。</div></div>
+    <div class="term"><div class="t">インサイドベット / アウトサイドベット<span class="en">Inside / Outside Bet</span></div><div class="d">数字の枠内に置く高配当の賭けがインサイド、赤黒や偶奇などの低配当がアウトサイド。</div></div>
+    <div class="term"><div class="t">ストレートアップ<span class="en">Straight Up</span></div><div class="d">数字1点に賭ける方法。配当35倍。</div></div>
+    <div class="term"><div class="t">スプリット / ストリート / コーナー<span class="en">Split / Street / Corner</span></div><div class="d">隣接する2・3・4個の数字にまたがって賭ける方法（配当17・11・8倍）。</div></div>
+    <div class="term"><div class="t">ダズン / コラム<span class="en">Dozen / Column</span></div><div class="d">12個の数字にまとめて賭ける方法。配当2倍。</div></div>
+    <div class="term"><div class="t">カラーチップ<span class="en">Color Chip</span></div><div class="d">プレイヤーごとに色分けされたルーレット専用チップ。誰の賭けか区別するため。</div></div>
+    <div class="term"><div class="t">ドリー<span class="en">Dolly / Marker</span></div><div class="d">当たり番号の上に置かれるマーカー。外れるまで次の賭けはしない。</div></div>
+    <div class="term"><div class="t">ラ・パルタージュ / アンプリゾン<span class="en">La Partage / En Prison</span></div><div class="d">0が出た時に偶数賭けの半額が戻る（または次回持ち越し）フレンチ卓の救済ルール。控除率1.35%まで低下。</div></div>
+    <div class="term"><div class="t">ファイブナンバーベット<span class="en">Basket</span></div><div class="d">0・00・1・2・3の5点賭け。控除率7.89%とルーレット最悪の賭け。避ける。</div></div>
+  </section>
+
+  <section class="cat" id="c-baccarat">
+    <h2>バカラ<span class="en">BACCARAT</span></h2>
+    <div class="term"><div class="t">バンカー / プレイヤー / タイ<span class="en">Banker / Player / Tie</span></div><div class="d">3つの賭け先。バンカーが最有利（控除率1.06%）、タイ（引き分け）は控除率14.36%で論外。</div></div>
+    <div class="term"><div class="t">ナチュラル<span class="en">Natural</span></div><div class="d">最初の2枚で合計8か9。出た時点で即決着する。</div></div>
+    <div class="term"><div class="t">コミッション<span class="en">手数料 / Commission</span></div><div class="d">バンカー勝ちの配当から引かれる5%の手数料。それでもバンカーが最有利。</div></div>
+    <div class="term"><div class="t">ミニバカラ<span class="en">Mini-Baccarat</span></div><div class="d">少額から遊べる小型テーブルのバカラ。進行が速い。</div></div>
+    <div class="term"><div class="t">罫線<span class="en">けいせん / Roadmap</span></div><div class="d">過去の勝敗を記録した表。人気だが数学的には次の結果に影響しない。</div></div>
+  </section>
+
+  <section class="cat" id="c-craps">
+    <h2>クラップス<span class="en">CRAPS</span></h2>
+    <div class="term"><div class="t">シューター<span class="en">Shooter</span></div><div class="d">サイコロを振る人。客が交代で務める。</div></div>
+    <div class="term"><div class="t">カムアウトロール<span class="en">Come Out Roll</span></div><div class="d">最初の一投。7・11で即勝ち、2・3・12で即負け。</div></div>
+    <div class="term"><div class="t">ポイント<span class="en">Point</span></div><div class="d">カムアウトで4・5・6・8・9・10が出た時に設定される目標の数字。</div></div>
+    <div class="term"><div class="t">パスライン / ドントパス<span class="en">Pass / Don't Pass</span></div><div class="d">シューターの勝ちに賭けるのがパスライン、負けに賭けるのがドントパス（わずかに有利）。</div></div>
+    <div class="term"><div class="t">カム / ドントカム<span class="en">Come / Don't Come</span></div><div class="d">ポイント確定後に、あらためてパス／ドントパス相当の賭けを始める方法。</div></div>
+    <div class="term"><div class="t">オッズベット<span class="en">Free Odds</span></div><div class="d">ポイント確定後に追加できる、<b>控除率0%</b>の完全フェアな賭け。上級攻略の核。</div></div>
+    <div class="term"><div class="t">3-4-5xオッズ</div><div class="d">ポイント4・10で3倍、5・9で4倍、6・8で5倍までオッズを置ける標準ルール。</div></div>
+    <div class="term"><div class="t">プレースベット<span class="en">Place Bet</span></div><div class="d">特定の数字が7より先に出ることに賭ける方法。6・8は許容だが4・10は不利。</div></div>
+    <div class="term"><div class="t">フィールド / ハードウェイ<span class="en">Field / Hardways</span></div><div class="d">テーブル中央の高控除率ベット群。配当は大きいが不利。</div></div>
+    <div class="term"><div class="t">セブンアウト<span class="en">Seven Out</span></div><div class="d">ポイントより先に7が出てシューターの番が終わること。</div></div>
+    <div class="term"><div class="t">スティックマン / ボックスマン<span class="en">Stickman / Boxman</span></div><div class="d">サイコロを差し出す係と、チップを管理する監督役。クラップスは複数人で運営される。</div></div>
+    <div class="term"><div class="t">バブルクラップス<span class="en">電子クラップス / Bubble Craps</span></div><div class="d">ドーム内でサイコロが跳ねる電子版。ミニマムが安く初心者の練習向き。</div></div>
+  </section>
+
+  <section class="cat" id="c-poker">
+    <h2>ポーカー<span class="en">POKER</span></h2>
+    <div class="term"><div class="t">テキサスホールデム<span class="en">Texas Hold'em</span></div><div class="d">世界標準のポーカー。手札2枚と共有5枚から最強の5枚を作る。</div></div>
+    <div class="term"><div class="t">ホールカード / コミュニティカード<span class="en">Hole / Community Cards</span></div><div class="d">自分だけの手札2枚がホールカード、全員共有の場札がコミュニティカード。</div></div>
+    <div class="term"><div class="t">フロップ / ターン / リバー<span class="en">Flop / Turn / River</span></div><div class="d">共有カードが開かれる段階。3枚→1枚→1枚の順。</div></div>
+    <div class="term"><div class="t">プリフロップ<span class="en">Preflop</span></div><div class="d">共有カードが開かれる前、手札2枚だけの最初のベット局面。</div></div>
+    <div class="term"><div class="t">ブラインド<span class="en">Blind (SB/BB)</span></div><div class="d">毎ハンド強制的に出す賭け金。$1/$3のようにレートで表す。</div></div>
+    <div class="term"><div class="t">チェック / コール / レイズ / フォールド<span class="en">Check / Call / Raise / Fold</span></div><div class="d">パス、同額を出す、上乗せする、降りる、の4つの基本アクション。</div></div>
+    <div class="term"><div class="t">ポジション<span class="en">Position</span></div><div class="d">自分がベットする順番。後に行動できる（ボタンに近い）ほど情報が多く有利。</div></div>
+    <div class="term"><div class="t">ポット<span class="en">Pot</span></div><div class="d">場に集まった賭け金の総額。勝者が総取りする。</div></div>
+    <div class="term"><div class="t">ショーダウン<span class="en">Showdown</span></div><div class="d">最後まで残ったプレイヤーが手札を見せ合い、勝敗を決めること。</div></div>
+    <div class="term"><div class="t">レーキ<span class="en">テラ銭 / Rake</span></div><div class="d">カジノが各ポットから抜く手数料。低レートほど相対的な負担が重い。</div></div>
+    <div class="term"><div class="t">アウツ<span class="en">Outs</span></div><div class="d">自分の手を完成させてくれる残りのカードの枚数。</div></div>
+    <div class="term"><div class="t">ポットオッズ<span class="en">Pot Odds</span></div><div class="d">コール額とポットの比率。ドローの完成率がこれを上回ればコールが正当化される。</div></div>
+    <div class="term"><div class="t">4-2の法則<span class="en">Rule of 4 and 2</span></div><div class="d">完成率の暗算法。アウツ×4（残り2枚）／×2（残り1枚）でおおよその%が出る。</div></div>
+    <div class="term"><div class="t">スーテッド / オフスート<span class="en">Suited / Offsuit</span></div><div class="d">2枚のスートが同じ（フラッシュを狙える）か、違うか。表記は例：AKs。</div></div>
+    <div class="term"><div class="t">コネクター<span class="en">Connector</span></div><div class="d">数字が連続する2枚（例：87）。ストレートを狙える投機的な手。</div></div>
+    <div class="term"><div class="t">オープンエンド / ガットショット<span class="en">Open-ended / Gutshot</span></div><div class="d">両側どちらでも完成する両面ストレート待ち（8アウツ）と、中抜けの待ち（4アウツ）。</div></div>
+    <div class="term"><div class="t">タイト・アグレッシブ<span class="en">TAG</span></div><div class="d">参加する手を絞り（タイト）、参加したら強く攻める（アグレッシブ）勝ちやすい型。</div></div>
+    <div class="term"><div class="t">ティルト<span class="en">Tilt</span></div><div class="d">頭に血が上って冷静さを失った状態。技術的な優位を一瞬で溶かす。</div></div>
+    <div class="term"><div class="t">バイイン<span class="en">Buy-in</span></div><div class="d">卓に着く際に持ち込むチップ額。バンクロールはこの何十回分で管理する。</div></div>
+    <div class="term"><div class="t">ストリングベット<span class="en">String Bet</span></div><div class="d">チップを複数回に分けて出す反則行為。レイズ額は一度に、または先に宣言する。</div></div>
+  </section>
+
+  <section class="cat" id="c-vp">
+    <h2>ビデオポーカー<span class="en">VIDEO POKER</span></h2>
+    <div class="term"><div class="t">Jacks or Better</div><div class="d">定番機種。ジャック以上のワンペアから配当がつく。略してJoB。</div></div>
+    <div class="term"><div class="t">9/6 / フルペイ<span class="en">9/6 / Full Pay</span></div><div class="d">フルハウス9・フラッシュ6配当の最良の配当表。JoBなら還元率99.54%。</div></div>
+    <div class="term"><div class="t">MAX BET<span class="en">Max Bet</span></div><div class="d">5枚賭け。ロイヤルの配当が跳ね上がるため常に選ぶのが鉄則。</div></div>
+    <div class="term"><div class="t">ホールド / ドロー<span class="en">Hold / Draw</span></div><div class="d">残すカードを選ぶのがホールド、残り札を交換するのがドロー。</div></div>
+    <div class="term"><div class="t">デノミ<span class="en">Denomination</span></div><div class="d">1枚あたりの額面（25¢、$1など）。賭け金は枚数でなくデノミで調整する。</div></div>
+    <div class="term"><div class="t">Deuces Wild</div><div class="d">2が万能札（ワイルド）になる機種。フルペイなら還元率100%超だが希少。</div></div>
+  </section>
+
+  <section class="cat" id="c-comp">
+    <h2>コンプ・資金管理<span class="en">COMPS &amp; BANKROLL</span></h2>
+    <div class="term"><div class="t">コンプ<span class="en">Comp / Complimentary</span></div><div class="d">プレイ実績に応じてカジノが提供する無料の食事・部屋・ショーなどの特典。</div></div>
+    <div class="term"><div class="t">プレイヤーズカード<span class="en">Player's Card</span></div><div class="d">プレイを記録する無料の会員カード。着席時にディーラーへ渡す。コンプの元になる。</div></div>
+    <div class="term"><div class="t">セオ<span class="en">Theo / Theoretical Loss</span></div><div class="d">理論上の負け額。コンプはこの数値で決まり、勝ち負けの結果とは無関係。</div></div>
+    <div class="term"><div class="t">ホスト<span class="en">Casino Host</span></div><div class="d">一定額以上プレイする客につく担当者。部屋・食事・ショーの手配を交渉できる。</div></div>
+    <div class="term"><div class="t">メーラー<span class="en">Mailer / Offer</span></div><div class="d">プレイ履歴に応じて届く無料宿泊やフリープレイのオファー。</div></div>
+    <div class="term"><div class="t">バンクロール<span class="en">Bankroll</span></div><div class="d">ギャンブルに充てる総資金。ベット額・セッション予算はこれを基準に管理する。</div></div>
+    <div class="term"><div class="t">リスク・オブ・ルーイン<span class="en">Risk of Ruin</span></div><div class="d">資金を使い果たして退場する確率。ベットを小さく、資金を厚くするほど下がる。</div></div>
+    <div class="term"><div class="t">ハンドル<span class="en">Handle</span></div><div class="d">動かした賭け金の総額。ハウスエッジはこの総額に対して効いてくる。</div></div>
+    <div class="term"><div class="t">マーチンゲール<span class="en">Martingale</span></div><div class="d">負けるたびに倍賭けする必勝法。テーブル上限と資金の前に必ず破綻する。</div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="backlinks">
+    <a href="index.html">← 初心者ガイド（遊び方の基本）</a>
+    <a href="strategy.html">実践攻略ガイド（上級者向け）→</a>
+  </div>
+  <div style="margin-top:22px;">21歳未満はプレイできません。ギャンブルは節度を持って。</div>
+</footer>
+
+<script>
+  const q = document.getElementById('q');
+  const terms = Array.from(document.querySelectorAll('.term'));
+  const cats = Array.from(document.querySelectorAll('.cat'));
+  const chips = document.querySelector('.chips');
+  const countEl = document.getElementById('count');
+  const noresult = document.getElementById('noresult');
+  const total = terms.length;
+
+  // cache lowercase searchable text per term
+  terms.forEach(t => { t.dataset.k = t.textContent.toLowerCase(); });
+
+  function esc(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  function normalize(s){
+    // treat full-width/half-width and simple kana loosely by just lowercasing
+    return s.toLowerCase().trim();
+  }
+
+  function highlight(term, query){
+    // remove old marks, then merge adjacent text nodes
+    term.querySelectorAll('mark').forEach(m => {
+      m.replaceWith(document.createTextNode(m.textContent));
+    });
+    term.normalize();
+    if(!query) return;
+    const rx = new RegExp(esc(query), 'gi');
+    term.querySelectorAll('.t, .d').forEach(node => {
+      // snapshot children so DOM mutation doesn't disturb iteration
+      Array.from(node.childNodes).forEach(child => {
+        if(child.nodeType === 3 && child.textContent.toLowerCase().includes(query)){
+          const span = document.createElement('span');
+          span.innerHTML = child.textContent.replace(rx, m => '<mark>'+m+'</mark>');
+          while(span.firstChild) node.insertBefore(span.firstChild, child);
+          node.removeChild(child);
+        }
+      });
+    });
+  }
+
+  function run(){
+    const query = normalize(q.value);
+    let shown = 0;
+    terms.forEach(t => {
+      const hit = !query || t.dataset.k.includes(query);
+      t.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+      highlight(t, query);
+    });
+    // hide empty categories
+    cats.forEach(c => {
+      const any = c.querySelectorAll('.term').length &&
+        Array.from(c.querySelectorAll('.term')).some(t => t.style.display !== 'none');
+      c.style.display = any ? '' : 'none';
+    });
+    chips.style.display = query ? 'none' : '';
+    noresult.style.display = shown === 0 ? 'block' : 'none';
+    countEl.textContent = query ? (shown + ' / ' + total + ' 語') : ('全 ' + total + ' 語');
+  }
+
+  q.addEventListener('input', run);
+  run();
+</script>
+</body>
+</html>

@@ -80,6 +80,7 @@
     text-decoration:none;
   }
   .masthead .goadv:hover{background:rgba(211,169,78,.12);}
+  .masthead .mhlinks{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
   /* ---------- advanced promo card ---------- */
   .advcard{
     display:block;
@@ -297,6 +298,8 @@
     border-top:1px solid var(--line-soft);
     line-height:2;
   }
+  footer a{color:var(--gold-bright);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
   .nextlink{
     display:block;
     text-align:center;
@@ -328,7 +331,10 @@
   <h1>LAS VEGAS CASINO GUIDE</h1>
   <p class="sub">はじめてのカジノ 完全ガイド</p>
   <p class="note">テーブルゲームからスロットまで、遊び方・配当・マナーをこの1ページで</p>
-  <a class="goadv" href="strategy.html">▶ 実践攻略ガイド（上級者向け）へ</a>
+  <div class="mhlinks">
+    <a class="goadv" href="strategy.html">▶ 実践攻略ガイド（上級者向け）</a>
+    <a class="goadv" href="glossary.html">📖 用語集</a>
+  </div>
 </header>
 
 <nav class="tabs" aria-label="ゲーム選択">
@@ -798,6 +804,7 @@
 </main>
 
 <footer>
+  <div style="margin-bottom:16px;"><a href="strategy.html">実践攻略ガイド</a>　|　<a href="glossary.html">用語集</a></div>
   Good luck &amp; have fun in Vegas!<br>
   ※本ガイドはラスベガスの標準的なルール・数値に基づく参考情報です。ルール・配当・ミニマムベットはカジノや時期により異なります。<br>
   お酒とギャンブルは節度を持って。21歳未満はプレイできません。
