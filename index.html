@@ -243,6 +243,21 @@
   td.pay{color:var(--gold-bright);font-weight:700;font-variant-numeric:tabular-nums;}
   .good{color:#8FD6A8;font-weight:600;}
   .bad{color:var(--red);font-weight:600;}
+  /* ---------- figures / diagrams ---------- */
+  figure.diagram{margin:16px 0;}
+  figure.diagram .frame{
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    overflow:hidden;
+    background:var(--surface);
+  }
+  figure.diagram img{display:block;width:100%;height:auto;}
+  figure.diagram figcaption{
+    color:var(--muted);
+    font-size:12.5px;
+    margin-top:8px;
+    line-height:1.7;
+  }
   /* ---------- callouts ---------- */
   .tip,.warn{
     border-radius:var(--radius);
@@ -434,6 +449,13 @@
 
   <h3>ハンドシグナル（重要）</h3>
   <p>防犯カメラ記録のため、意思表示は声ではなく<b>ジェスチャー</b>で行います。</p>
+  <figure class="diagram">
+    <div class="frame">
+      <img src="assets/bj-signals.png" width="1536" height="1024"
+           alt="ブラックジャックのハンドシグナル4種の図。ヒットは人差し指でテーブルを軽く叩く、スタンドは手のひらを下にして横に振る、ダブルダウンは元のベットの横に同額のチップを置いて指を1本立てる、スプリットは同様にチップを置いて指を2本のVサインにする。">
+    </div>
+    <figcaption>意思表示のジェスチャー4種。<b>ダブルダウンは指1本／スプリットは指2本（V）</b>で区別します。</figcaption>
+  </figure>
   <div class="tablewrap">
     <table>
       <thead><tr><th>アクション</th><th class="wrap">ジェスチャー（カード表向きのテーブル）</th></tr></thead>
@@ -504,6 +526,13 @@
   </ol>
 
   <h3>ベットの種類と配当</h3>
+  <figure class="diagram">
+    <div class="frame">
+      <img src="assets/roulette-layout.png" width="1536" height="1024"
+           alt="アメリカンルーレットのレイアウト図。左端に0と00、右に1〜36の数字が3行×12列で並び、赤黒に色分けされている。ストレートアップ（数字1点）、スプリット（2数字の境界）、ストリート（1列3数字の外周ライン）、コーナー（4数字の交点）、ダブルストリート（2列6数字の境目）の各チップの置き場所を示している。">
+    </div>
+    <figcaption>チップの置き場所の例。<b>ストリート</b>は1列（3数字）の外周ライン上、<b>ダブルストリート</b>は隣り合う2列（6数字）の境目に置きます。同じ要領で、たとえば 25・26・27 に賭けるならその列の外周ラインの中央に置きます。</figcaption>
+  </figure>
   <div class="tablewrap">
     <table>
       <thead><tr><th>ベット</th><th class="wrap">内容</th><th class="num">配当</th></tr></thead>
@@ -588,6 +617,13 @@
   <p class="lede">ポーカールームで行うポーカーは、カジノではなく<b>他のプレイヤーとの真剣勝負</b>（カジノは場代を取るだけ）。世界標準は<b>テキサスホールデム</b>です。経験者向けですが、役と流れを知れば観戦も楽しめます。</p>
 
   <h3>役の強さ（ハンドランキング）</h3>
+  <figure class="diagram">
+    <div class="frame">
+      <img src="assets/poker-hands.png" width="1024" height="1536"
+           alt="ポーカーの役の強さ一覧。上から強い順に、ロイヤルフラッシュ、ストレートフラッシュ、フォーカード、フルハウス、フラッシュ、ストレート、スリーカード、ツーペア、ワンペア、ハイカードの10種類を、それぞれ例の5枚のトランプで図示している。">
+    </div>
+    <figcaption>上ほど強い役です。薄く小さいカードは役に関与しない<b>キッカー</b>（役が同じ強さのとき勝敗を決める予備のカード）を表します。</figcaption>
+  </figure>
   <div class="tablewrap">
     <table>
       <thead><tr><th class="num">強さ</th><th>役</th><th class="wrap">内容</th></tr></thead>
@@ -643,6 +679,14 @@
     <div class="stat"><span class="k">初心者おすすめ</span><span class="v">★★☆</span></div>
   </div>
   <p class="lede">2個のサイコロで遊ぶアメリカ生まれのゲーム。テーブル全体が一体となって盛り上がる、カジノで最も歓声が上がる場所です。ベット表は複雑に見えますが、<b>「パスライン」1種類だけ覚えれば参加できます</b>。</p>
+
+  <figure class="diagram">
+    <div class="frame">
+      <img src="assets/craps-layout.png" width="1536" height="1024"
+           alt="クラップス台の簡易レイアウト図。上部にポイント番号4・5・6・8・9・10のボックスが並び、6の上に「ON」マーカーが置かれている。手前のPASS LINEにチップ①、その後ろにオッズベットのチップ②が置かれ、中央のプロップベット（ハードウェイやエニーセブン）には「AVOID＝高い控除率」の警告が付いている。">
+    </div>
+    <figcaption>まず<b>①パスライン</b>に賭け、ポイントが決まったら<b>②その後ろにオッズ</b>を追加します。中央の派手なベット（ハードウェイ等）は控除率が高いので避けましょう。</figcaption>
+  </figure>
 
   <h3>基本：パスラインベット</h3>
   <p>サイコロを振る人（<b>シューター</b>）は客が交代で務めます。みんなでシューターを応援する構図です。</p>
